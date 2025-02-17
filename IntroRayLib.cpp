@@ -14,22 +14,27 @@ const int MAX_COLORS_COUNT = 21;
 class Paddle {
 
 public:
-	int xpos, ypos;
-	int speed_x, speed_y;
+	Vector2 v{};
+	int speed = 6;
+
 
 	Paddle(int x, int y) {
-		xpos = x;
-		ypos = y;
+
+		v.x = x;
+		v.y = y;
 
 	}
 
 	void Draw() {
-		DrawRectangle(xpos, ypos, 100, 20, { 255,0,0,125 });
+		DrawRectangle(v.x, v.y, 100, 20, { 255,0,0,125 });
 	}
 
 	void Update() {
-		xpos += 6;
-		ypos++;
+
+		if (IsKeyDown(KEY_RIGHT)) v.x += speed;
+		if (IsKeyDown(KEY_LEFT)) v.x -= speed;
+		if (IsKeyDown(KEY_UP)) v.y -= speed;
+		if (IsKeyDown(KEY_DOWN)) v.y += speed;
 	}
 
 };
