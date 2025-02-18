@@ -26,6 +26,9 @@
     <Image Include="StashAirplaneDuotone.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="pngegg.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Media Include="stereofl.wav">
